@@ -71,11 +71,11 @@ async function addNewEmployee() {
     .prompt([{
       name: "firstName",
       type: "input",
-      message: "Please enter First Name:"
+      message: "Please enter employee First Name:"
     }, {
       name: "lastName",
       type: "input",
-      message: "Please enter Last Name:"
+      message: "Please enter employee Last Name:"
     }]).then(async function (employeeInfo) {
       let roles = await db.executeQuery("SELECT * FROM role");
       let sql = `INSERT INTO employee SET first_name= '${employeeInfo.firstName}' , last_name= '${employeeInfo.lastName}'`;
